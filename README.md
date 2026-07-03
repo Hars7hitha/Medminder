@@ -37,6 +37,7 @@ data.json  MCP Server
 ```
 
 **Three-Agent System:**
+
 - **Scheduler Agent** – Add, remove, and display medication schedules with dosage and timing
 - **Safety Agent** – Calls openFDA and RxNorm APIs through MCP server to check drug-drug interactions; blocks unsafe additions
 - **Caregiver Agent** – Generates privacy-filtered reports based on patient consent level
@@ -57,15 +58,15 @@ Every action is logged to `security/audit_log.json` with timestamp and user ID.
 
 ## Tech Stack
 
-| Component | Technology |
-|-----------|-----------|
-| LLM | Gemini 2.5 Flash |
-| Agent Framework | Google ADK |
-| Drug APIs | openFDA, RxNorm (free) |
-| MCP | FastMCP |
-| Web Framework | Flask |
-| Frontend | HTML, CSS, JavaScript |
-| Deployment | Docker, Render |
+| Component       | Technology             |
+| --------------- | ---------------------- |
+| LLM             | Gemini 2.5 Flash       |
+| Agent Framework | Google ADK             |
+| Drug APIs       | openFDA, RxNorm (free) |
+| MCP             | FastMCP                |
+| Web Framework   | Flask                  |
+| Frontend        | HTML, CSS, JavaScript  |
+| Deployment      | Docker, Render         |
 
 ---
 
@@ -104,6 +105,7 @@ medminder/
 ## Setup Instructions
 
 **Prerequisites**
+
 - Python 3.10+
 - Google AI Studio API key (free at [aistudio.google.com](https://aistudio.google.com))
 - Docker (optional)
@@ -122,23 +124,28 @@ pip install -r requirements.txt
 ```
 
 Create `.env` in root:
+
 ```
 GOOGLE_API_KEY=your_api_key_here
 GOOGLE_GENAI_USE_VERTEXAI=FALSE
 ```
 
 **Run Web App**
+
 ```bash
 python app.py
 ```
+
 Open http://localhost:8080
 
 **Run with ADK (CLI)**
+
 ```bash
 python run_adk.py
 ```
 
 **Run with Docker**
+
 ```bash
 docker build -t medminder .
 docker run -p 8080:8080 -e GOOGLE_API_KEY=your_key_here medminder
@@ -180,9 +187,3 @@ MedMinder: Patient ID: patient_001, Total Meds: 4, Next Dose: 20:00
 
 - [openFDA Drug Label API](https://api.fda.gov/drug/label.json) – Free, no auth required
 - [RxNorm API](https://rxnav.nlm.nih.gov) – Free, no auth required
-
----
-
-## License
-
-MIT
