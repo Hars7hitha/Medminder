@@ -1,0 +1,42 @@
+{
+  "patient": {
+    "id": "patient_001",
+    "name": "Mr. A",
+    "age": 68,
+    "conditions": [
+      "hypertension",
+      "type 2 diabetes"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "100mg",
+      "times": [
+        "08:00"
+      ],
+      "added_on": "2026-06-01"
+    },
+    {
+      "name": "Metformin",
+      "dose": "500mg",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "added_on": "2026-06-01"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10mg",
+      "times": [
+        "09:00"
+      ],
+      "added_on": "2026-06-24"
+    }
+  ],
+  "caregiver": {
+    "name": "Priya",
+    "access_level": "summary_only"
+  }
+}
